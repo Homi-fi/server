@@ -6,6 +6,4 @@ router.post('/signin', userController.signIn)
 router.post('/register', userController.register)
 
 
-
-
 module.exports = router;
