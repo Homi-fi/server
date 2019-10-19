@@ -106,10 +106,10 @@ describe('USER TEST', function () {
                 .post('/user/signin')
                 .send(login)
                 .end(function (err, res) {
-                    expect(res).to.have.status(404)
+                    expect(res).to.have.status(400)
                     expect(res).to.be.an('object')
                     expect(res.body).to.have.property('message').to.be.a('string')
-                    expect(res.body.message).to.be.equal('user not found')
+                    expect(res.body.message).to.be.equal('User Not Found')
                     done()
                 })
         })

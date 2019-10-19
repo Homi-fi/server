@@ -22,12 +22,13 @@ class UserController {
                     }
                     const token = generateToken(payload)
                     res.status(200).json({
-                        token
+                        token,
+                        name: user.name
                     })
                 }
             } else {
-                res.status(404).json({
-                    message:'user not found'
+                res.status(400).json({
+                    message:'User Not Found'
                 })
             }
         }).catch(next)
