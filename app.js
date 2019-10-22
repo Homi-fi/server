@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: false }))
 /* istanbul ignore next */
 app.use(express.json())
 /* istanbul ignore next */
-// mongoose.connect(`mongodb+srv://catlover:${process.env.PASS}@cluster0-trxl7.gcp.mongodb.net/final-project-${process.env.NODE_ENV ? process.env.NODE_ENV : ''}?retryWrites=true&w=majority`, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
-mongoose.connect('mongodb://localhost:27017/smarthome', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+// mongoose.connect('mongodb://localhost:27017/smarthome', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://catlover:${process.env.PASS}@cluster0-trxl7.gcp.mongodb.net/final-project-${process.env.NODE_ENV ? process.env.NODE_ENV : ''}?retryWrites=true&w=majority`, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
   .then(data => {
     console.log('database connected')
   }).catch(err => {
