@@ -4,9 +4,9 @@ const { lamp1On, lamp1Off, lamp2On, lamp2Off } = require('../jobs/scheduler')
 class CronController {
   static Lamp(req, res, next) {
     const { time } = req.params
-    const hours = time.split(':')[0]
-    const minutes = time.split(':')[1]
-    const status = parseInt(time.split(':')[2])
+    const hours = time.split(':')[0] || 0
+    const minutes = time.split(':')[1] || 0
+    const status = parseInt(time.split(':')[2]) || 0
     const name = decodeURI(time.split(':')[3])
 
     switch (name) {
@@ -54,6 +54,8 @@ class CronController {
           res.status(200).json({ message: 'Lamp 2-off cron stopped' })
         }
         break
+      default:
+        res.status(200).json({ message: 'No lamp has been found' })
     }
   }
 }
